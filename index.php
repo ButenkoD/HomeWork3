@@ -9,6 +9,6 @@
 
 require_once "vendor/autoload.php";
 
-use controller\Controller;
+require_once "controller/controller.php";
 
-$controller = new Controller();
+
