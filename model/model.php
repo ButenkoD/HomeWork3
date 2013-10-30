@@ -13,37 +13,12 @@ use model\Cat;
 use model\Bear;
 use model\Eagle;
 use model\Dove;
-use controller\Controller;
 
-class Model
+function invokeModel($animal_kind)
 {
-    public function invokeModel($animal_kind)
-    {
-        Controller::$correct_uri = true;
-        switch ($animal_kind)
-        {
-            case "cat":
-                return $this->createCat();
-                break;
+}
 
-            case "bear":
-                return $this->createBear();
-                break;
-
-            case "eagle":
-                return $this->createEagle();
-                break;
-
-            case "dove":
-                return $this->createDove();
-                break;
-
-            default:
-                Controller::$correct_uri = false;
-        }
-    }
-
-    private function createCat()
+function createCat()
     {
         $cat = new Cat();
         $cat->setColor('black');
@@ -52,7 +27,7 @@ class Model
         return $cat;
     }
 
-    private function createBear()
+function createBear()
     {
         $bear = new Bear();
         $bear->setColor('brown');
@@ -61,7 +36,7 @@ class Model
         return $bear;
     }
 
-    private function createEagle()
+function createEagle()
     {
         $eagle = new Eagle();
         $eagle->setColor('gold');
@@ -70,7 +45,7 @@ class Model
         return $eagle;
     }
 
-    private function createDove()
+function createDove()
     {
         $dove = new Dove();
         $dove->setColor('grey');
@@ -78,5 +53,3 @@ class Model
         $dove->setWing(2);
         return $dove;
     }
-
-}
